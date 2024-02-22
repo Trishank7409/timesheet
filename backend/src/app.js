@@ -13,4 +13,16 @@ app.use(cors({
 app.use(express.json({limit:"20kb"}))
 
 
+// Routes
+import employeeRoutes from './routes/employee.routes.js';
+import ratingRoutes from './routes/rating.routes.js';
+import timesheetRoutes from './routes/timesheet.routes.js';
+
+
+app.use('/employees', employeeRoutes);
+app.use('/ratings', ratingRoutes);
+app.use('/timesheets', timesheetRoutes);
+
+
+
 export {app}
